@@ -3,7 +3,7 @@ import { RootState } from '../store/types'
 import { formatTime } from '../utils'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { fetchEvents } from '../store/actions'
+import { fetchEvents, seekToTimestamp } from '../store/actions'
 
 function EventList() {
 	const dispatch = useDispatch()
@@ -16,7 +16,12 @@ function EventList() {
 	return (
 		<ul>
 			{events.map(event => (
-				<li key={event.timestamp}>{formatTime(event.timestamp)}</li>
+				<li
+					key={event.timestamp}
+					onClick={() => dispatch(seekToTimestamp(event.timestamp))}
+				>
+					{formatTime(event.timestamp)}
+				</li>
 			))}
 		</ul>
 	)

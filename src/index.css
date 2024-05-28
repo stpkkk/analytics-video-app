@@ -1,15 +1,10 @@
 @import 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap';
 
 :root {
-	--color-brand--1: #ffb545;
-	--color-brand--2: #00c46a;
+	--color-green: #00c46a;
 
-	--color-dark--0: #242a2e;
-	--color-dark--1: #2d3439;
-	--color-dark--2: #42484d;
-	--color-light--1: #aaa;
-	--color-light--2: #ececec;
-	--color-light--3: #d6dee0;
+	--color-dark: #242a2e;
+	--color-light: #ececec;
 }
 
 * {
@@ -19,16 +14,15 @@
 }
 
 html {
-	font-size: 62.5%;
 	box-sizing: border-box;
 }
 
 body {
 	font-family: 'Manrope', sans-serif;
-	color: var(--color-light--2);
+	color: var(--color-light);
 	font-weight: 400;
 	line-height: 1.6;
-	background-color: var(--color-dark--1);
+	background-color: var(--color-dark);
 }
 
 ul {
@@ -42,5 +36,5 @@ li {
 }
 
 li:hover {
-	background-color: var(--color-light--2);
+	background-color: var(--color-green);
 }
