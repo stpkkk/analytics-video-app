@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { RootState } from '../store/types'
+import { Event, RootState } from '../store/types'
 import { formatTime } from '../utils'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
@@ -9,6 +9,10 @@ function EventList() {
 	const dispatch = useDispatch()
 	const events = useSelector((state: RootState) => state.events)
 
+	function handleClick(event: Event) {
+		dispatch(seekToTimestamp(event.timestamp))
+	}
+
 	useEffect(() => {
 		dispatch(fetchEvents())
 	}, [dispatch])
@@ -16,10 +20,7 @@ function EventList() {
 	return (
 		<ul>
 			{events.map(event => (
-				<li
-					key={event.timestamp}
-					onClick={() => dispatch(seekToTimestamp(event.timestamp))}
-				>
+				<li key={event.timestamp} onClick={() => handleClick(event)}>
 					{formatTime(event.timestamp)}
 				</li>
 			))}
