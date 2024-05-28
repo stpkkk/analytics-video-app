@@ -1,5 +1,12 @@
+import { EventList, VideoPlayer } from './components'
+
 function App() {
-	return <>analytics-video-app</>
+	return (
+		<div>
+			<VideoPlayer />
+			<EventList />
+		</div>
+	)
 }
 
 export default App

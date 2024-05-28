@@ -1,16 +1,24 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+import { createRoot } from 'react-dom/client'
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import createSagaMiddleware from 'redux-saga'
+import reducer from './store/reducers'
+import rootSaga from './store/sagas'
+import App from './App'
 import './index.css'
 
-const rootElement = document.getElementById('root')
+const sagaMiddleware = createSagaMiddleware()
+const store = createStore(reducer, applyMiddleware(sagaMiddleware))
 
-if (rootElement) {
-	ReactDOM.createRoot(rootElement).render(
-		<React.StrictMode>
+sagaMiddleware.run(rootSaga)
+
+const container = document.getElementById('root')
+if (container) {
+	const root = createRoot(container)
+	root.render(
+		<Provider store={store}>
 			<App />
-		</React.StrictMode>
+		</Provider>
 	)
-} else {
-	console.error('Root element not found')
 }
