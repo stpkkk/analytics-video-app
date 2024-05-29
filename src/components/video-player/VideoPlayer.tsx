@@ -29,7 +29,12 @@ function VideoPlayer() {
 
 	return (
 		<>
-			<video ref={videoRef} controls onTimeUpdate={handleTimeUpdate}>
+			<video
+				ref={videoRef}
+				controls
+				onTimeUpdate={handleTimeUpdate}
+				data-testid='video-element'
+			>
 				<source
 					src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
 					type='video/mp4'
