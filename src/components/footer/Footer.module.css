@@ -1,0 +1,14 @@
+.footer {
+	display: flex;
+	justify-content: center;
+	fill: var(--color-light);
+}
+
+.footer svg {
+	cursor: pointer;
+	fill: var(--color-light);
+}
+
+.footer svg:hover {
+	fill: var(--color-green);
+}
