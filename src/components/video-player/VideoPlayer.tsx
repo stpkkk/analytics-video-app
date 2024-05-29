@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { useDispatch } from 'react-redux'
-import { RootState, Event } from '../store/types'
-import { fetchEvents } from '../store/actions'
-import EventRect from './EventRect'
+import { useSelector, useDispatch } from 'react-redux'
+import { RootState, Event } from '../../types'
+import { fetchEvents } from '../../store/actions'
+import { EventRect } from '../event-rect'
+import styles from './VideoPlayer.module.css'
 
 function VideoPlayer() {
 	const videoRef = useRef<HTMLVideoElement>(null)
@@ -30,7 +30,7 @@ function VideoPlayer() {
 	}
 
 	return (
-		<div ref={containerRef} style={{ position: 'relative' }}>
+		<div ref={containerRef} className={styles.container}>
 			<video ref={videoRef} controls onTimeUpdate={handleTimeUpdate}>
 				<source
 					src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'

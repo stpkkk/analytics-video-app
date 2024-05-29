@@ -1,4 +1,4 @@
-import React from 'react'
+import styles from './EventRect.module.css'
 
 interface EventRectProps {
 	zone: {
@@ -9,18 +9,15 @@ interface EventRectProps {
 	}
 }
 
-const EventRect: React.FC<EventRectProps> = ({ zone }) => {
+function EventRect({ zone }: EventRectProps) {
 	return (
 		<div
+			className={styles.rect}
 			style={{
-				position: 'absolute',
 				top: zone.top,
 				left: zone.left,
 				width: zone.width,
 				height: zone.height,
-				pointerEvents: 'none',
-				boxSizing: 'border-box',
-				background: 'green',
 			}}
 		/>
 	)

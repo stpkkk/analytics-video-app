@@ -2,9 +2,22 @@
 
 :root {
 	--color-green: #00c46a;
-
 	--color-dark: #242a2e;
 	--color-light: #ececec;
+}
+
+.thin-scroll::-webkit-scrollbar {
+	width: 10px;
+}
+
+.thin-scroll::-webkit-scrollbar-thumb {
+	background-color: var(--color-green);
+	border-radius: 20px;
+}
+
+.thin-scroll::-webkit-scrollbar-track {
+	background-color: var(--color-light);
+	border-radius: 20px;
 }
 
 * {
@@ -21,6 +34,7 @@ body {
 	font-family: 'Manrope', sans-serif;
 	color: var(--color-light);
 	font-weight: 400;
+	font-size: medium;
 	line-height: 1.6;
 	background-color: var(--color-dark);
 }
@@ -28,13 +42,4 @@ body {
 ul {
 	list-style: none;
 	padding: 0;
-}
-
-li {
-	cursor: pointer;
-	padding: 5px;
-}
-
-li:hover {
-	background-color: var(--color-green);
 }

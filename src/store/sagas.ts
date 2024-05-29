@@ -1,6 +1,6 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 import { FETCH_EVENTS, setEvents } from './actions'
-import { Event } from './types'
+import { Event } from '../types'
 
 const API_URL = 'https://run.mocky.io/v3/86ba5ad4-c45e-4f3d-9a07-83ce9a345833'
 

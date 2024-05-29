@@ -1,4 +1,4 @@
-import { Event } from './types'
+import { Event } from '../types'
 
 export const FETCH_EVENTS = 'FETCH_EVENTS'
 export const SET_EVENTS = 'SET_EVENTS'

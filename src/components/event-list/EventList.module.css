@@ -1,0 +1,16 @@
+.listContainer {
+	position: relative;
+	height: 720px;
+	overflow-y: auto;
+	width: 100%;
+}
+
+li {
+	cursor: pointer;
+	padding: 5px;
+	width: 100%;
+}
+
+li:hover {
+	background-color: var(--color-green);
+}

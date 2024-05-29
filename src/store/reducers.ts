@@ -1,5 +1,5 @@
+import { RootState } from '../types'
 import { SEEK_TO_TIMESTAMP, SET_EVENTS } from './actions'
-import { RootState } from './types'
 
 const initialState: RootState = {
 	events: [],

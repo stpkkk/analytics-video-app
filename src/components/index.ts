@@ -1,5 +1,3 @@
-import VideoPlayer from './VideoPlayer'
-import EventList from './EventList'
-import EventRect from './EventRect'
-
-export { VideoPlayer, EventList, EventRect }
+export * from './event-list'
+export * from './video-player'
+export * from './event-rect'
