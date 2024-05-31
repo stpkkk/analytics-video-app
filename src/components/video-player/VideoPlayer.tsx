@@ -34,6 +34,7 @@ function VideoPlayer() {
 				controls
 				onTimeUpdate={handleTimeUpdate}
 				data-testid='video-element'
+				style={{ width: '100%' }}
 			>
 				<source
 					src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
