@@ -1,13 +1,28 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
-import { FETCH_EVENTS, setEvents } from './actions'
+import { FETCH_EVENTS, setEvents, setEventsError } from './actions'
 import { Event } from '../types'
 
-const API_URL = 'https://run.mocky.io/v3/86ba5ad4-c45e-4f3d-9a07-83ce9a345833'
+const API_URL = 'https://5025y.wiremockapi.cloud/json/1'
 
 function* fetchEventsSaga() {
-	const response: Response = yield call(fetch, API_URL)
-	const data: Event[] = yield response.json()
-	yield put(setEvents(data))
+	try {
+		const response: Response = yield call(fetch, API_URL)
+
+		if (!response.ok) {
+			throw new Error(`HTTP error! status: ${response.status}`)
+		}
+
+		const data: Event[] = yield response.json()
+		yield put(setEvents(data))
+	} catch (error) {
+		// Check if the error is an instance of Error
+		if (error instanceof Error) {
+			yield put(setEventsError(error.message))
+		} else {
+			// Handle unknown error types
+			yield put(setEventsError('An unknown error occurred.'))
+		}
+	}
 }
 
 function* rootSaga() {

@@ -9,7 +9,7 @@ const mockStore = configureStore([])
 test('renders VideoPlayer component correctly', () => {
 	const store = mockStore({
 		events: [],
-	} as RootState)
+	})
 
 	const { container } = render(
 		<Provider store={store}>

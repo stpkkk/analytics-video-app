@@ -13,4 +13,6 @@ export interface Event {
 
 export interface RootState {
 	events: Event[]
+	error: string
+	loading: boolean
 }
